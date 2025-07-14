@@ -1,6 +1,6 @@
 import '@/app/ui/global.css';
 import { inter } from './ui/fonts';
-import Link from 'next/link';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 export default function RootLayout({
   children,
 }: {
@@ -9,8 +9,9 @@ export default function RootLayout({
   return (
     <html lang="en">
 
-      <body className={`${inter.className} antialiased`}> <nav>
-        </nav>{children}</body>
+      <body className={`${inter.className} antialiased`}> {children}
+        <SpeedInsights/>
+      </body>
     </html>
   );
 }
